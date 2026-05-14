@@ -42,15 +42,15 @@ namespace TremorMod.Content.Biomes.Ice.Mobs
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if (!spawnInfo.Player.InModBiome<IceBiome>())
+            if (Main.LocalPlayer.InModBiome<IceBiome>())
             {
-                if (Main.dayTime && !NPC.AnyNPCs(NPCID.LunarTowerVortex) && !NPC.AnyNPCs(NPCID.LunarTowerStardust) && !NPC.AnyNPCs(NPCID.LunarTowerNebula) && !NPC.AnyNPCs(NPCID.LunarTowerSolar))
+                if (!Main.IsItDay() && !NPC.AnyNPCs(NPCID.LunarTowerVortex) && !NPC.AnyNPCs(NPCID.LunarTowerStardust) && !NPC.AnyNPCs(NPCID.LunarTowerNebula) && !NPC.AnyNPCs(NPCID.LunarTowerSolar))
                 {
-                    return 0f;
+                    return 10f;
                 }
             }
-
-            return 15f;
+			
+			return 0f;
         }
 
         public override void AI()
