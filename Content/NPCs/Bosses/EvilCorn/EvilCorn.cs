@@ -198,7 +198,7 @@ namespace TremorMod.Content.NPCs.Bosses.EvilCorn
 		Rectangle getFrame(int Index)
 		{
 			Index--;
-			Rectangle rect = new Rectangle(0, 93 * Index, 155, 93);
+			Rectangle rect = new Rectangle(0, 120 * Index, 200, 120);
 			if (++Index > 13)
 				rect.Y += 2;
 			else
